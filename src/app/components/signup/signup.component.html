@@ -41,7 +41,7 @@
                 <input type="password" class="form-control" formControlName="repeatpassword"
                     placeholder="Repeat Password" [ngClass]="{'error': submitted && myForm.repeatpassword.errors}">
                 <!-- error block -->
-                <div class="invalid-feedback" *ngIf="submitted && myForm.repeatpassword.errors.mustMatch">
+                <div class="invalid-feedback" *ngIf="submitted && myForm.repeatpassword.errors">
                     <sup>*</sup>Password mismatch
                 </div>
             </div>

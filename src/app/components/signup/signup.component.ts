@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from './../../shared/auth.service';
 import { Router } from '@angular/router';
-import { MustMatch } from "./../../validate/validate-password";
+import { ValidatePassword } from "./../../validate/validate-password";
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
     repeatpassword: ['', Validators.required],
     roles: ['user']
   }, {
-    validator: MustMatch('password', 'repeatpassword')
+    validator: ValidatePassword.MustMatch('password', 'repeatpassword')
   })
 
   ngOnInit() {
